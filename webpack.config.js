@@ -3,12 +3,18 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
+  mode: 'development',
+  devtool: 'inline-source-map',
+  devServer: {
+    contentBase: './dist',
+    open: 'Google Chrome',
+  },
   entry: {
     app: './src/index.js',
     print: './src/print.js',
   },
   plugins: [
-    new CleanWebpackPlugin(),
+    new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
     new HtmlWebpackPlugin({
       title: 'Output Management',
     }),
@@ -16,5 +22,6 @@ module.exports = {
   output: {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
+    publicPath: '/',
   },
 };
