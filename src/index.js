@@ -1,20 +1,15 @@
 import _ from 'lodash';
-import './style.css';
-import IconWebpack from './icon-webpack.png';
-import Data from './data.xml';
+import printMe from './print';
 
 function component() {
-  const element = document.createElement("div");
+  const element = document.createElement('div');
+  const btn = document.createElement('button');
 
-  element.innerHTML = _.join(["Hello", "webpack"], " ");
-  element.classList.add('hello');
+  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+  btn.innerHTML = 'Click me and check the console!';
+  btn.onclick = printMe;
 
-  // Add the image to our existing div.
-  const myIcon = new Image();
-  myIcon.src = IconWebpack;
-  element.appendChild(myIcon);
-
-  console.log(Data);
+  element.appendChild(btn);
 
   return element;
 }
