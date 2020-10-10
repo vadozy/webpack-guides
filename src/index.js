@@ -3,6 +3,9 @@ import './style.css';
 import IconWebpack from './icon-webpack.png';
 import Data from './data.xml';
 
+console.log('Vadim 01 Data: ', typeof(Data), Data);
+console.log('Vadim 02 IconWebpack: ', typeof(IconWebpack), IconWebpack);
+
 function component() {
   const element = document.createElement("div");
 
