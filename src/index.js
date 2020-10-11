@@ -11,5 +11,5 @@ function getComponent() {
 }
 
 getComponent().then(component => {
-  document.body.appendChild(component());
+  document.body.appendChild(component);
 });
